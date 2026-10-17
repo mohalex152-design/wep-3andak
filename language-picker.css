@@ -1,0 +1,80 @@
+/* Web 3andak language picker only; works with the current languages.js */
+#languagePicker.web3-language-overlay {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    background: rgba(21, 21, 30, .58);
+    backdrop-filter: blur(5px);
+}
+
+#languagePicker .web3-language-dialog {
+    width: min(520px, 100%);
+    max-height: 85vh;
+    overflow: auto;
+    padding: 22px;
+    border: 1px solid var(--border, #e8e8ed);
+    border-radius: 18px;
+    background: var(--surface, #fff);
+    color: var(--text, #20212a);
+    box-shadow: 0 20px 70px rgba(0, 0, 0, .22);
+}
+
+#languagePicker .web3-language-dialog header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+#languagePicker .web3-language-dialog header button {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 1px solid var(--border, #e8e8ed);
+    border-radius: 10px;
+    background: var(--surface-soft, #f1f1f5);
+    color: var(--muted, #777986);
+    font-size: 21px;
+}
+
+#languagePicker .web3-language-dialog header button:hover {
+    border-color: var(--primary, #5d53ce);
+    color: var(--primary, #5d53ce);
+}
+
+#languagePicker .web3-language-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+#languagePicker .web3-language-grid button {
+    min-height: 44px;
+    padding: 9px 12px;
+    border: 1px solid var(--border, #e8e8ed);
+    border-radius: 10px;
+    background: var(--surface-soft, #f1f1f5);
+    color: var(--text, #20212a);
+    text-align: start;
+    transition: border-color .16s ease, background .16s ease, color .16s ease;
+}
+
+#languagePicker .web3-language-grid button:hover,
+#languagePicker .web3-language-grid button[aria-pressed="true"] {
+    border-color: var(--primary, #5d53ce);
+    background: var(--primary-soft, #eeedfb);
+    color: var(--primary, #5d53ce);
+}
+
+#languagePicker .web3-language-grid button[aria-pressed="true"] { font-weight: 700; }
+
+@media (max-width: 420px) {
+    #languagePicker .web3-language-dialog { padding: 17px; }
+    #languagePicker .web3-language-grid { grid-template-columns: 1fr; }
+}
